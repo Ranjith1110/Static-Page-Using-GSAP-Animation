@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins&family=Protest+Riot&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(to left, #EA8D8D, #A890FE);
+            color: #fff;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .wrapper {
+            width: 100%;
+            height: 100%;
+        }
+
+        .nav {
+            padding: 3rem 7rem 0 7rem;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .nav .left {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        .nav .left h3 {
+            font-weight: 300;
+            padding-right: 10px;
+        }
+
+        .nav .left h2 {
+            font-weight: 700;
+            font-style: italic;
+        }
+
+        .nav .right h2 {
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        .nav .right p {
+            font-size: 14px;
+        }
+
+        .intro {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .intro .hero {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 8rem 7rem 0 7rem;
+            transform: translateY(100%);
+        }
+
+        .intro .hero .left-hero {
+            width: 55%;
+        }
+
+        .intro .hero .left-hero h1 {
+            font-size: 3rem;
+            font-weight: 600;
+            line-height: 60px;
+        }
+
+        .intro .hero .right-hero {
+            width: 40%;
+        }
+
+        .slider {
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #A890FE;
+            width: 100%;
+            height: 100%;
+            transform: translateY(100%);
+        }
+
+        @media (max-width:799px) {
+            .intro .hero .left-hero h1 {
+                font-size: 2rem;
+                font-weight: 600;
+                line-height: 40px;
+                padding: 100px 0 0 10px;
+            }
+
+            .intro .hero .right-hero img {
+                width: 100%;
+                padding: 100px 0 0 10px;
+            }
+        }
+
+        @media (max-width:477px) {
+            .nav .left{
+                font-size: 14px;
+                margin-left: -90px;
+            }
+            .nav .right{
+                margin-right: -90px;
+                font-size: 14px;
+            }
+            .intro .hero .left-hero h1 {
+                font-size: 1rem;
+                font-weight: 500;
+                line-height: 25px;
+                margin-left: -90px;
+            }
+            .intro .hero .right-hero img {
+               width: 250%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="nav">
+            <div class="left">
+                <h3>New</h3>
+                <h2>Profit</h2>
+            </div>
+            <div class="right">
+                <h2>Ranjith</h2>
+                <p>Already A Member</p>
+            </div>
+        </div>
+        <div class="intro">
+            <div class="hero">
+                <div class="left-hero">
+                    <h1>Web Developer,<br>maker,brand builder<br>-and type lover.</h1>
+                </div>
+                <div class="right-hero">
+                    <img src="./IMG_3622.jpg" alt="Man">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="slider"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+        integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        const tl = gsap.timeline({ defaults: { ease: 'power2.out' } });
+
+        tl.to('.slider', { y: '-100%', duration: 1.2 });
+        tl.to('.intro .hero', { y: '0%', duration: 1.2 }, '-=1');
+        tl.fromto('.nav', { opacity: 0 }, { opacity: 1, duration: 1 });
+    </script>
+</body>
+
+</html>
